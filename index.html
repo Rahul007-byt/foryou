@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Letter For You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="petals-container" id="petalsContainer"></div>
+
+    <!-- Decorative Corner Flowers & Stickers -->
+    <div class="side-decor decor-rose">🌹</div>
+    <div class="side-decor decor-lotus">🪷</div>
+    <div class="side-decor decor-hibiscus">🌺</div>
+    <div class="side-decor decor-ribbon">🎀</div>
+    <div class="side-decor decor-star">⭐</div>
+
+    <!-- Passcode Modal / Lock Screen -->
+    <div class="lock-modal" id="lockModal">
+        <div class="lock-box">
+            <div class="lock-icon">🔒</div>
+            <h2>Enter Secret PIN</h2>
+            <div class="pin-inputs">
+                <input type="password" maxlength="1" class="pin-digit" autofocus>
+                <input type="password" maxlength="1" class="pin-digit">
+                <input type="password" maxlength="1" class="pin-digit">
+                <input type="password" maxlength="1" class="pin-digit">
+            </div>
+            <p class="pin-hint">Hint: time when i propose you</p>
+            <p class="error-msg" id="errorMsg">Incorrect PIN, try again! 💔</p>
+            <button class="unlock-btn" id="unlockBtn">Unlock Letter 💖</button>
+        </div>
+    </div>
+
+    <div class="scene-container">
+        <!-- Scene 1 & 2: Greeting & Envelope -->
+        <div id="envelopeStage" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+            <h1 id="greetingText" class="greeting-hidden">To My Cutie Pie, Reena 🌙</h1>
+
+            <div class="envelope-container" id="envelopeContainer">
+                <div class="envelope" id="envelope">
+                    <div class="envelope-back"></div>
+                    <div class="envelope-flap" id="envelopeFlap"></div>
+                    <div class="inner-glow" id="innerGlow"></div>
+                    
+                    <!-- Letter Sheet with Arun's Note -->
+                    <div class="letter-sheet" id="letterSheet">
+                        <div class="letter-content">
+                            <h2>❤️‍🩹 To My Cutie Pie, Reena 🌙</h2>
+                            <p><strong>Date: 9 October 2026</strong></p>
+                            
+                            <p>Heyyy, meri pyari Cutie Pie! ❤️🫂</p>
+                            
+                            <p>Ager tune ye letter open kar liya, yani tujhe hamari first relationship time yaad hai jab ham relationship mai aaye the...!😘❤️‍🩹</p>
+                            
+                            <p>Sabse pehle toh sun, huh! 😂❤️ Pata nahi ye letter kab tere paas pahunchega, kyunki ise banane mein thoda time lagega. I know, main tujhe simple sa message bhi bhej sakta tha, but itna special banane ki kya zaroorat thi na? Actually, tu mere liye special hai, toh socha letter bhi special hona chahiye. 🥹💗</p>
+                            
+                            <p>Reena, hamare beech past mein bahut si misunderstandings hui hain. Kabhi meri galti rahi hogi, kabhi teri, aur kabhi situations hi aisi rahi hongi ki hum ek-doosre ko samajh nahi paaye. Teri kuch baaton se mujhe bahut hurt bhi hua hai, but iska matlab ye nahi ki meri feelings tere liye kam ho gayi hain.</p>
+                            
+                            <p>Long distance waise hi easy nahi hota. Jab kisi se itna pyaar ho aur woh paas na ho, toh chhoti-chhoti baatein bhi kabhi-kabhi bahut zyada feel hoti hain. Ek message, ek reply, thodi si baat—ye sab bhi kitna special lagta hai na?</p>
+                            
+                            <p>I loved you then, I love you now, and honestly, I think I love you even more than before. ❤️‍🩹</p>
+                            
+                            <p>Pata nahi main apni feelings tujhe kitne achhe se samjha paata hoon, but ek baat sach hai: main tujhe bahut miss karta hoon. Kabhi-kabhi bas mann karta hai ki tujhse ek baar baat ho jaaye, sab kuch side mein rakhkar hum normal baat karein, thoda hasein aur ek-doosre ko samjhein.</p>
+                            
+                            <p>🥺 Aaj school mein ek baat hui...</p>
+                            
+                            <p>Aaj 9 October 2026 hai. School mein Chandan phone lekar aaya tha. Tab mere ek dost ne dheere se mujhse poochha, “Reena se baat karega?”<br>
+                            Maine poochha, “Kaise?”<br>
+                            Usne kaha, “Chandan Ke Phone Se.”<br>
+                            Maine mana kar diya aur bola, “Nahi, uske phone se bilkul nahi.”<br>
+                            Pata hai kyun, Reena?</p>
+                            
+                            <p>Us moment ke baad mera mood ekdum kharab ho gaya. Main achanak sad ho gaya, jaise kisi ne meri khushi chheen li ho. Shayad tujhe ye baat chhoti lage, but mere liye us moment mein emotions bahut alag the.</p>
+                            
+                            <p>Tu khud imagine kar, agar tu school mein baithi ho aur tera koi friend us ladke se baat kar raha ho jisse tu pyaar karti hai, aur tu usi class mein saamne baithkar use typing karte hue dekh rahi ho, toh tujhe kaisa lagega? ❤️‍🩹<br>
+                            Thoda hurt toh hoga na?</p>
+                            
+                            <p>Bas, mere saath bhi kuch aisa hi hua. Main tujhe blame nahi kar raha, kyunki mujhe pata hai ki us moment mein tune kuch kiya bhi nahi tha. Ye bas mere dil mein chal rahi feelings thi. Long distance mein jab pehle se hi baat karne ka mann karta ho, toh aise moments aur zyada feel hote hain.</p>
+                            
+                            <p>Maine ignore kar diya, kyunki socha, ab react karke bhi kya ho jaayega?</p>
+                            
+                            <p>Main ye sab tujhe hurt karne ke liye nahi bata raha, meri pyari Cutie Pie. ❤️🥹 Bas chahta tha ki tu kabhi meri side se bhi is moment ko samjhe.</p>
+                            
+                            <p>💭 Aur haan, kuch logon ki baat...</p>
+                            
+                            <p>U know, main kin logon ki baat kar raha hoon. Kuch log mere baare mein bura-bhala bol sakte hain, jaise pehle bhi hua tha.</p>
+                            
+                            <p>Main tujhe ye nahi bolunga ki tu kisi ki baat mat sunna, kyunki believe karna ya na karna tera decision hai. Bas meri ek request hai: agar kabhi mere baare mein kuch sunne ko mile, toh please ek baar mujhse bhi pooch lena.</p>
+                            
+                            <p>Kyuki idk Priya ka kya seen hai usne bjhi hogi ak snap jisme A/P likha hoga woh chandan mare dosto ko dikha rha the and tujhe bhi ak baar bola the na ki ye relationship mai hai...</p>
+                            
+                            <p>By God mai relationship mai nhi hu uske... I sure... Mummy kasam mai pyar nhi karta woh karti hai ya nhi idc and idk but mari first priority it's U only for U..</p>
+                            
+                            <p>Main perfect nahi hoon, mujhse bhi galtiyan ho sakti hain. But main kabhi jaan-boojhkar aisa kuch nahi karna chahta jisse tujhe meri wajah se hurt ho.</p>
+                            
+                            <p>Agar mujhse kabhi koi galti ho, toh mujhe bata dena. Main chahta hoon ki hum ek-doosre se baat karke cheezein samjhein, na ki kisi aur ki baaton ki wajah se ek-doosre ko galat samajh baithein.</p>
+                            
+                            <p>Distance already hai hamare beech, misunderstandings ki wajah se ise aur badhana nahi chahta. 🫂❤️‍🩹</p>
+                            
+                            <p>🫂 Jab teri tabiyat kharab hui thi...</p>
+                            
+                            <p>Reena, jab mujhe pata chala ki tujhe dengue hua hai aur tu hospital mein hai, tab main ek performance mein tha.<br>
+                            Really mai dar gaya the bahut jhada 🥺🥺</p>
+                            
+                            <p>Maine teri report dekhi aur main ekdum shaant ho gaya. Na cheering karne ka mann hua, na clapping karne ka. Main bas tere baare mein soch raha tha.</p>
+                            
+                            <p>Mere dost ne mujhe thoda sambhala aur kaha, “Theek ho jaayegi yaar, tension mat le.”<br>
+                            Us waqt mujhe bas yahi chahiye tha ki tu jaldi theek ho jaaye. Chahe hum kitni bhi door kyun na hon, teri tabiyat ki fikr mujhe thi aur rahegi.</p>
+                            
+                            <p>Aur pata hai, mere doston ne bhi tere liye pray kiya. Mujhe bahut achha laga ki unhone bhi tere theek hone ki dua ki. ❤️</p>
+                            
+                            <p>Ab mujhe khushi hai ki tu theek hai. Bas apna dhyaan rakha kar, time par khana kha, apni health ko seriously liya kar.</p>
+                            
+                            <p>Aur please, us hostel mein jaane ka decision achhe se soch-samajhkar lena. Mujhe bas teri safety aur happiness ki fikr hai. Main nahi chahta ki tujhe kisi bhi tarah ki dikkat ho.</p>
+                            
+                            <p>Tu jaldi se poori tarah healthy ho ja, meri Cutie Pie. Baaki baatein toh hoti rahengi. 🥹🫶🏻</p>
+                            
+                            <p>🌙 Our Moon Memories...</p>
+                            
+                            <p>Woh 9:30 par moon dekhne wali baat yaad hai..? 🌙❤️<br>
+                            Main roz raat ko lagbhag 9:30 baje moon dekha karta tha, jaise tune mujhe bola tha. Mere paas moon ki kuch pictures bhi hain.</p>
+                            
+                            <p>Kabhi-kabhi main moon dekhta hoon toh teri yaad aa jaati hai. Pata nahi kyun, but woh chhoti si baat bhi mere liye bahut special ban gayi.</p>
+                            
+                            <p>Aur moon se yaad aaya... main teri pictures bhi dekha karta tha. Huhhh! 😂❤️ Kya bataun tujhe, meri Cutie Pie!</p>
+                            
+                            <p>Door rehkar bhi kuch cheezein insaan ko kisi ke kareeb feel karwa deti hain. Mere liye woh moon wali memory unhi mein se ek hai.</p>
+                            
+                            <p>Reena, woh saari baatein yaad hain tujhe? 🥹❤️<br>
+                            Jab main bolta tha, “Roona aa raha hai,” toh tu tissue ki jagah kambal ka photo bhej deti thi. 🤣😭 Aur jab tu bolti thi “Bol,” toh main kehta tha “Kya?” Phir tu bolti thi, “Aadi ka ghanta la!” 😂😭 Yaar, kya memories hain! Ye sab purani baatein aaj bhi mere saath hain aur hamesha rahengi. ❤️‍🩹</p>
+                            
+                            <p>But Reena, kuch memories achhi hain toh kuch aisi bhi hain jo aaj tak hurt karti hain. Jaise pehle apne doston ko ye na batana ki Arun tera boyfriend hai, male friends se baat karna aur mujhe galat samajhna, mujhe ignore karna, aur woh situations jinki wajah se mujhe lagne laga tha ki shayad hamara breakup ho jaayega. Ye sab baatein main poori tarah bhula nahi paaya hoon.</p>
+                            
+                            <p>But phir bhi main in sab baaton ko side mein rakhkar tujhse baat karta hoon, kyunki mere liye tu aaj bhi important hai. Agar main bhi un logon jaisa hota jinko kisi ki kadar nahi hoti, toh shayad Zaid wala scene hone ke baad hi chala gaya hota. But me? No, no, no! 😭❤️</p>
+                            
+                            <p>Aur haan, sach bolun toh aaj bhi teri following dekhta hoon na, toh hurt hota hai. Kya karun yaar, feelings hain! Tu ise jealousy samajh, insecurity samajh ya tujhe khone ka darr, jo bhi samajhna hai samajh lena. Main bas apni feelings bata raha hoon. Main tujhe control nahi karna chahta, bas kabhi-kabhi overthink karne lagta hoon. 🥹❤️‍🩹</p>
+                            
+                            <p>But ek baat aaj bhi same hai, Reena. Mere dil mein tu abhi bhi wahi Reena hai jo 2 December 2025, 10:06 PM par thi. 🌙❤️ Woh time, woh feelings aur woh pyaar mere liye aaj bhi utne hi special hain.</p>
+                            
+                            <p>Pata nahi waqt ke saath kitna kuch badal gaya, kitni misunderstandings aayin aur hum kitna door ho gaye, but jab bhi main un dino ko yaad karta hoon, toh mujhe bas woh purani wali Reena yaad aati hai aur woh saara pyaar jo tune meko diya tha..</p>
+                            
+                            <p>I love you, yaar. Bahut saara. ❤️‍🩹 Thank you un saari memories ke liye, chahe woh funny thi ya sad, kyunki woh sab meri life ka part hain aur hamesha rahengi.</p>
+                            
+                            <p>I love you so much, Reena. I really miss you. 🫂❤️🌙</p>
+                            
+                            <p>Ab end karta hu likhna kyuki mare sar dard ho rha hai or ye sar dard normal nhi hai..<br>
+                            Mai kisi ko nhi smjha pata include doctor ko bhi ki ye sar dard kase ho reha hai. Idk tujhe smjha paunga, hota kya hai ki phle eye ka vision hai left side dikhna band ho jata hai i mean blur type mujhe force karna padta hai dekhne ke liye or eye open rekhu ya band mujhe particles show hote hai jo sar dard karate hai idk kya hai...<br>
+                            Doctor ko phle aise hi eye dikhai thi unhone infection bataya the that's it. phir eye pain ke baad koi word shi se focus nhi hota jo likh rha hu ye bhi shi se show nahi ho reha pain ke karan toh speeling mistake ingnor plz. And then last mai bahut taj sar dard hota hai like abhi.... Kaise samjhau kisi ko ghar walo ko bhi nhi smjha pata....!</p>
+                            
+                            <p>💌 One last thing, Reena...</p>
+                            
+                            <p>Main nahi jaanta ki ye letter padhte waqt tere face par smile hogi, tu emotional hogi ya tu mujhe bolegi, “Pagal hai kya?” 😂❤️<br>
+                            But jo bhi ho, ye letter maine dil se likha hai.</p>
+                            
+                            <p>Mujhe teri yaad aati hai, Reena. Bahut zyada. Kabhi-kabhi bas ek chhoti si conversation ke liye bhi mann karta hai. Teri baatein sunne ka, tere saath hasne ka aur woh normal sa connection feel karne ka jo hamare beech tha.</p>
+                            
+                            <p>I really, really love you. Bahut saara. Aur main tujhe bahut miss karta hoon. ❤️‍🩹🫂</p>
+                            
+                            <p>Main nahi jaanta future mein kya hoga, but main itna jaanta hoon ki tu mere liye special hai.</p>
+                            
+                            <p>Thank you, yaar, meri life mein aane ke liye. Thank you un memories ke liye jo aaj bhi mere liye special hain.</p>
+                            
+                            <p>Apna dhyaan rakhna, meri pyari Cutie Pie. Khush rehna, healthy rehna, achhe se khana khana aur zyada tension mat lena.</p>
+                            
+                            <p>Aur haan, mujhe bhool mat jaana, samjhi? Huh! 😂❤️</p>
+                            
+                            <p>Aur ka tere kuch shayariya hai jo shayad tujhe pasand aayngi ki</p>
+                            
+                            <p>अपनी आँखों में भर कर ले जाने हैं<br>
+                            मुझ को उस के आँसू काम में लाने है</p>
+                            
+                            <p>देखो हम कोई वहशी नइँ दीवाने हैं<br>
+                            तुम से बटन खुलवाने नइँ लगवाने हैं</p>
+                            
+                            <p>Aur ye ek ki jo specially tere liye hai</p>
+                            
+                            <p>ये तुम्हारे लब मुझे देखकर मुस्कुरा दे तो अच्छा हैं<br>
+                            इन हवाओं मई तेरी जुल्फे बिखर  जाये तो अच्छा हैं</p>
+                            
+                            <p>जिस कदर कुछ पल गुजारे है मैंने तेरे साथ<br>
+                            उसी तरह सारी उम्र गुजर जाये तो अच्छा है</p>
+                            
+                            <p>And ye last jo meri puri feelings bol rahi hai</p>
+                            
+                            <p>अधूरी चाहत है मेरी अधूरी दास्तान मेरी<br>
+                            मेरे जज्बे अधूरे हैं<br>
+                            मेरी ख़ुशियाँ के पैमाने अधूरे हैं<br>
+                            मोहब्बत पे मेरे होठों पे अफसाने अधूरे हैं<br>
+                            अधूरे पान की एक दुनिया मेरे चारो तरफ है<br>
+                            फिर भी अपने दिल की सब गहराइयों के साथ<br>
+                            सब सच्चाइयों के साथ में इक़रार करता हूँ<br>
+                            मैं तुमसे प्यार करता हूँ<br>
+                            मैं तुमसे प्यार करता हूँ</p>
+                            
+                            <p>I LOVE YOU SO MUCH, REENA. ❤️🌙</p>
+                            
+                            <p>I MISS YOU SO MUCH. 🫂❤️‍🩹</p>
+                            
+                            <div class="letter-signature">
+                                <span>Lots of love,</span>
+                                <span class="handwritten-name">ARUN ❤️‍🩹🌙</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="envelope-pocket"></div>
+                    
+                    <div class="wax-seal" id="waxSeal">
+                        <span class="seal-initial">♥</span>
+                    </div>
+                </div>
+
+                <button id="openBtn" class="open-btn">Tap seal to open ♥</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

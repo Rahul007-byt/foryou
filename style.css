@@ -1,0 +1,429 @@
+:root {
+    --pink-bg: #fce4ec;
+    --pink-envelope: #ffb3b3;
+    --envelope-flap: #ff8585;
+    --deep-pink: #d81b60;
+    --letter-bg: #fffdf9;
+    --text-color: #4a2e35;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffccd5;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.45) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.45) 50%, transparent 50%);
+    background-size: 35px 35px;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Floating Petals Container */
+.petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    background: #ff80ab;
+    opacity: 0.6;
+    border-radius: 150% 0 150% 0;
+    animation: floatPetal 12s infinite ease-in-out;
+}
+
+@keyframes floatPetal {
+    0% { transform: translateY(-10vh) rotate(0deg) translateX(0); }
+    50% { transform: translateY(50vh) rotate(180deg) translateX(30px); }
+    100% { transform: translateY(110vh) rotate(360deg) translateX(-20px); }
+}
+
+/* Side Flowers & Doodles */
+.side-decor {
+    position: fixed;
+    font-size: 2rem;
+    z-index: 2;
+    animation: floatDecor 4s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+.decor-rose { top: 10%; left: 8%; transform: rotate(-15deg); }
+.decor-lotus { bottom: 12%; left: 10%; transform: rotate(10deg); font-size: 2.2rem; }
+.decor-hibiscus { top: 15%; right: 10%; transform: rotate(20deg); }
+.decor-ribbon { bottom: 15%; right: 8%; transform: rotate(-10deg); }
+.decor-star { top: 45%; left: 4%; font-size: 1.5rem; }
+
+@keyframes floatDecor {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-8px) rotate(5deg); }
+}
+
+/* LOCK MODAL / PIN SYSTEM */
+.lock-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.lock-modal.active {
+    display: flex;
+}
+
+.lock-box {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(216, 27, 96, 0.25);
+    text-align: center;
+    max-width: 330px;
+    width: 90%;
+    animation: popUp 0.3s ease;
+}
+
+@keyframes popUp {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.lock-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.lock-box h2 {
+    color: var(--deep-pink);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.pin-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.pin-digit {
+    width: 45px;
+    height: 50px;
+    border: 2px solid #ffccd5;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--deep-pink);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.pin-digit:focus {
+    border-color: var(--deep-pink);
+}
+
+.pin-hint {
+    font-size: 0.85rem;
+    color: #885563;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.error-msg {
+    color: #e53935;
+    font-size: 0.8rem;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.shake {
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+.unlock-btn {
+    background: var(--deep-pink);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(216, 27, 96, 0.3);
+    transition: background 0.3s;
+}
+
+.unlock-btn:hover {
+    background: #ad1457;
+}
+
+/* Main Container */
+.scene-container {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Greeting Text */
+h1#greetingText {
+    font-family: 'Dancing Script', cursive;
+    color: var(--deep-pink);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(216, 27, 96, 0.15);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h1#greetingText.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Envelope Wrapper */
+.envelope-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 1s ease, transform 1s ease;
+    width: 100%;
+}
+
+.envelope-container.show {
+    opacity: 1;
+    transform: scale(1);
+    animation: gentleFloat 5s ease-in-out infinite alternate;
+}
+
+@keyframes gentleFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-6px); }
+}
+
+/* Envelope Body */
+.envelope {
+    position: relative;
+    width: 360px;
+    height: 240px;
+    background: #ffcad4;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 15px 35px rgba(216, 27, 96, 0.2);
+    cursor: pointer;
+}
+
+.envelope-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffb3c1;
+    border-radius: 0 0 10px 10px;
+    z-index: 1;
+}
+
+.inner-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,182,193,0) 70%);
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.envelope-pocket {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 50%, #ffa6b6 50%), linear-gradient(225deg, transparent 50%, #ff9ebb 50%);
+    clip-path: polygon(0 35%, 50% 65%, 100% 35%, 100% 100%, 0 100%);
+    border-radius: 0 0 10px 10px;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff8fa3;
+    clip-path: polygon(0 0, 100% 0, 50% 55%);
+    transform-origin: top;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.wax-seal {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    background: var(--deep-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 6;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.seal-initial {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.letter-sheet {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 320px;
+    height: 210px;
+    background: var(--letter-bg);
+    background-image: linear-gradient(#e8dfd8 1px, transparent 1px);
+    background-size: 100% 28px;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    z-index: 3;
+    transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+}
+
+.letter-content {
+    opacity: 1;
+}
+
+.letter-sheet h2 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--deep-pink);
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.letter-sheet p {
+    font-size: 0.8rem;
+    line-height: 28px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.letter-signature {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4 !important;
+}
+
+.letter-signature span {
+    font-size: 0.85rem;
+    color: #885563;
+}
+
+.handwritten-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem !important;
+    color: var(--deep-pink) !important;
+}
+
+.open-btn {
+    margin-top: 25px;
+    background-color: var(--deep-pink);
+    color: #fff;
+    border: none;
+    padding: 12px 35px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+    transition: all 0.3s ease;
+}
+
+.open-btn:hover {
+    background-color: #ad1457;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4);
+}
+
+.open-btn.fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.envelope.opening .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.opening .wax-seal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+.envelope.opening .inner-glow {
+    opacity: 1;
+}
+
+.envelope.opening .letter-sheet {
+    transform: translateY(-75px) scale(1.05);
+    height: 360px;
+    z-index: 7;
+    box-shadow: 0 20px 40px rgba(216, 27, 96, 0.25);
+    overflow-y: auto;
+}
